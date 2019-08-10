@@ -1,10 +1,82 @@
-<header>
-    <div class="header-content">
-        <div class="header-content-inner">
-            <h1>{{ site.data.content.title }}</h1>
-            <hr>
-            <p>{{ site.data.content.subtitle }}</p>
-            <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+<header class="header" id="home">
+
+    <!-- SOLID COLOR BG -->
+    <div class="solid-color">
+        <!-- To make header full screen. Use .full-screen class with solid color. Example: <div class="solid-color full-screen">  -->
+
+        <!-- STICKY NAVIGATION -->
+        <div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation" style="top: -60px;">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <!-- LOGO ON STICKY NAV BAR -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="#"><img src="img/logo-blue@2x.png" alt="" width="30" height="30"></a>
+
+                </div>
+
+                <!-- NAVIGATION LINKS -->
+                <div class="navbar-collapse collapse" id="kane-navigation">
+                    <ul class="nav navbar-nav navbar-right main-navigation">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#brief1">Why Us?</a></li>
+                        <li><a href="#brief2">Describe</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#screenshot-section">Screenshots</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+            </div> <!-- /END CONTAINER -->
+        </div> <!-- /END STICKY NAVIGATION -->
+
+
+        <!-- CONTAINER -->
+        <div class="container">
+
+            <!-- ONLY LOGO ON HEADER -->
+            <div class="only-logo">
+                <div class="navbar">
+                    <div class="navbar-header">
+                        <img src="img/logo-white@2x.png" alt="" width="188" height="121">
+                    </div>
+                </div>
+            </div> <!-- /END ONLY LOGO ON HEADER -->
+
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <!-- HEADING AND BUTTONS -->
+                    <div class="intro-section">
+
+                        <!-- WELCOM MESSAGE -->
+                        <h1 class="intro">{{ site.data.content.title }}</h1>
+                        <h5>{{ site.data.content.subtitle }}</h5>
+
+                        <!-- BUTTON -->
+                        <div class="buttons" id="download-button">
+
+                            <a href="http://fit-fuze.com/#download" class="btn btn-default btn-lg standard-button"><i
+                                    class="icon-app-download"></i>Download App</a>
+
+                        </div>
+                        <!-- /END BUTTONS -->
+
+                    </div>
+                    <!-- /END HEADNING AND BUTTONS -->
+
+                </div>
+            </div>
+            <!-- /END ROW -->
+
         </div>
+        <!-- /END CONTAINER -->
     </div>
+    <!-- /END SOLID COLOR BG -->
 </header>
