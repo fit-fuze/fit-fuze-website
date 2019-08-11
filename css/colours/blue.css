@@ -17,7 +17,7 @@ DEEP COLOR CODE: #005885
 }
 
 .standard-button2 {
-    background: ##36AADC;
+    background: #36AADC;
 }
 
 .standard-button2:hover {
@@ -34,20 +34,20 @@ DEEP COLOR CODE: #005885
 
 .colored-line,
 .colored-line-left {
-    background: ##36AADC;
+    background: #36AADC;
 }
 
 .main-color {
-    color: ##36AADC;
+    color: #36AADC;
 }
 
 .color-bg {
-	background: ##36AADC;
+	background: #36AADC;
 	color: #FFFFFF;
 }
 
 .features .feature:hover .icon-container .icon {
-    background: ##36AADC;
+    background: #36AADC;
     color: #ffffff;
     border: 2px solid #ffffff;
     -webkit-box-shadow: 0px 0px 0px 2px #36AADC;
@@ -72,22 +72,22 @@ DEEP COLOR CODE: #005885
     background: #36AADC;
 }
 
-footer .contact-button {
+.contact-button {
     border: 2px solid #36AADC;
     color: #36AADC;
 }
 
-footer .contact-button:hover {
+.contact-button:hover {
     background: #36AADC;
 }
 
-footer .contact-box .expanded-contact-form .input-box:active,
-footer .contact-box .expanded-contact-form .textarea-box:active,
-footer .contact-box .expanded-contact-form .input-box:focus,
-footer .contact-box .expanded-contact-form .textarea-box:focus {
+.contact-box .expanded-contact-form .input-box:active,
+.contact-box .expanded-contact-form .textarea-box:active,
+.contact-box .expanded-contact-form .input-box:focus,
+.contact-box .expanded-contact-form .textarea-box:focus {
     border: 1px solid #36AADC;
 }
 
-footer .social-icons li a:hover {
+.social-icons li a:hover {
     color: #36AADC;
 }

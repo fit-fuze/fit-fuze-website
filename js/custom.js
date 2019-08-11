@@ -2,11 +2,11 @@
    LOADER                     
 =================================== */
 // makes sure the whole site is loaded
-jQuery(window).load(function() {
-        // will first fade out the loading animation
-	jQuery(".status").fadeOut();
-        // will fade out the whole DIV that covers the website.
-	jQuery(".preloader").delay(1000).fadeOut("slow");
+jQuery(window).load(function () {
+    // will first fade out the loading animation
+    jQuery(".status").fadeOut();
+    // will fade out the whole DIV that covers the website.
+    jQuery(".preloader").delay(1000).fadeOut("slow");
 })
 
 /* =================================
@@ -27,26 +27,26 @@ $('.mailchimp').ajaxChimp({
 });
 
 function mailchimpCallback(resp) {
-     if (resp.result === 'success') {
+    if (resp.result === 'success') {
         $('.subscription-success').html('<i class="icon_check_alt2"></i><br/>' + resp.msg).fadeIn(1000);
         $('.subscription-error').fadeOut(500);
-        
-    } else if(resp.result === 'error') {
+
+    } else if (resp.result === 'error') {
         $('.subscription-error').html('<i class="icon_close_alt2"></i><br/>' + resp.msg).fadeIn(1000);
-    }  
+    }
 }
 
 /* =================================
 ===  STICKY NAV                 ====
 =================================== */
 
-$(document).ready(function() {
-  $('.main-navigation').onePageNav({
-    scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
-    filter: ':not(.external)',
-    changeHash: true
-  });
-  
+$(document).ready(function () {
+    $('.main-navigation').onePageNav({
+        scrollThreshold: 0.2, // Adjust if Navigation highlights too early or too late
+        filter: ':not(.external)',
+        changeHash: true
+    });
+
 });
 
 
@@ -70,20 +70,20 @@ $(window).scroll(function () {
 });
 
 if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
-  function mainNav() {
+    function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
+        if (top > 40) $('.sticky-navigation').stop().animate({ "top": '0' });
 
-        else $('.sticky-navigation').stop().animate({"top": '-60'});
+        else $('.sticky-navigation').stop().animate({ "top": '-60' });
     }
 }
 
 if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
-  function mainNav() {
+    function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-        if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'});
+        if (top > 40) $('.sticky-navigation').stop().animate({ "top": '0' });
 
-        else $('.sticky-navigation').stop().animate({"top": '-120'});
+        else $('.sticky-navigation').stop().animate({ "top": '-120' });
     }
 }
 
@@ -92,25 +92,28 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
 /* =================================
 ===  DOWNLOAD BUTTON CLICK SCROLL ==
 =================================== */
-jQuery(function( $ ){
-			$('#download-button').localScroll({
-				duration:1000
-			});
-		});
+$("#download-button").click(function () {
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $("#download").offset().top
+    }, 2000);
+});
+
+
+
 
 
 /* =================================
 ===  FULL SCREEN HEADER         ====
 =================================== */
 function alturaMaxima() {
-  var altura = $(window).height();
-  $(".full-screen").css('min-height',altura); 
-  
+    var altura = $(window).height();
+    $(".full-screen").css('min-height', altura);
+
 }
 
-$(document).ready(function() {
-  alturaMaxima();
-  $(window).bind('resize', alturaMaxima);
+$(document).ready(function () {
+    alturaMaxima();
+    $(window).bind('resize', alturaMaxima);
 });
 
 
@@ -134,9 +137,9 @@ $('a.scrollto').bind('click.smoothscroll', function (event) {
 ===  WOW ANIMATION             ====
 =================================== */
 wow = new WOW(
-  {
-    mobile: false
-  });
+    {
+        mobile: false
+    });
 wow.init();
 
 
@@ -216,38 +219,55 @@ $("#subscribe").submit(function (e) {
 /* =================================
 ===  CONTACT FORM          ====
 =================================== */
-$("#contact").submit(function (e) {
-    e.preventDefault();
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var subject = $("#subject").val();
-    var message = $("#message").val();
-    var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
+// $("#contact").submit(function (e) {
+//     e.preventDefault();
+//     var name = $("#name").val();
+//     var email = $("#email").val();
+//     var subject = $("#subject").val();
+//     var message = $("#message").val();
+//     var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
 
-    function isValidEmail(emailAddress) {
-        var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
-        return pattern.test(emailAddress);
-    };
+//     function isValidEmail(emailAddress) {
+//         var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+//         return pattern.test(emailAddress);
+//     };
 
-    if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
-        $.ajax({
-            type: "POST",
-            url: "sendmail.php",
-            data: dataString,
-            success: function () {
-                $('.success').fadeIn(1000);
-                $('.error').fadeOut(500);
-            }
-        });
-    } else {
-        $('.error').fadeIn(1000);
-        $('.success').fadeOut(500);
-    }
+//     if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
+//         $.ajax({
+//             type: "POST",
+//             url: "sendmail.php",
+//             data: dataString,
+//             success: function () {
+//                 $('.success').fadeIn(1000);
+//                 $('.error').fadeOut(500);
+//             }
+//         });
+//     } else {
+//         $('.error').fadeIn(1000);
+//         $('.success').fadeOut(500);
+//     }
 
-    return false;
-});
+//     return false;
+// });
 
 
+// $('#contactform').submit(function() {
+//     var name = $("#name").val();
+//     var email = $("#email").val();
+//     var message = $("#message").val();
+// var dataString = 'name=' + name + '&email=' + email + '&message=' + message;
+//     $.ajax({
+//         type : "POST",
+//         url : "save.php",
+//         data : dataString,
+//         cache : false,
+//         success : function() {
+//                 $("#contactform").fadeOut(300);
+//                                     $("#notice").fadeIn(400);
+//         }
+//     });
+// return false;
+// });
 
 /* =================================
 ===  EXPAND COLLAPSE            ====
@@ -262,11 +282,12 @@ $('.expand-form').simpleexpand({
 ===  Bootstrap Internet Explorer 10 in Windows 8 and Windows Phone 8 FIX
 =================================== */
 if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-  var msViewportStyle = document.createElement('style')
-  msViewportStyle.appendChild(
-    document.createTextNode(
-      '@-ms-viewport{width:auto!important}'
+    var msViewportStyle = document.createElement('style')
+    msViewportStyle.appendChild(
+        document.createTextNode(
+            '@-ms-viewport{width:auto!important}'
+        )
     )
-  )
-  document.querySelector('head').appendChild(msViewportStyle)
+    document.querySelector('head').appendChild(msViewportStyle)
 }
+
